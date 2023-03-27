@@ -590,7 +590,7 @@ _delete_nonalpha = str.maketrans('', '', _nonalpha)
 
 def sanitize_string(s):
     # Translate non-ASCII character codes.
-    s = s.encode('ascii', errors='ignore').decode()
+    s = s.encode('mbcs', errors='ignore').decode()
     # Lower-case the string & strip non-alpha.
     return s.lower().translate(_delete_nonalpha)
 
